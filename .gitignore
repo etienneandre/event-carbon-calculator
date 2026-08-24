@@ -1,0 +1,26 @@
+# For LaTeX
+*.amc
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.brf
+*.log
+*.nav
+*.out
+*.run.xml
+*.snm
+*.spl
+*.synctex.gz
+*.tdo
+*.toc
+*.vrb
+*.vtc
+.kile
+
+# Temporary backup files
+*~
+
+# IDEs
+.code-workspace
+
