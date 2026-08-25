@@ -101,6 +101,7 @@ const TRANSLATIONS = {
         perspectiveTargetLabel: '' + (PARIS_AGREEMENT_ANNUAL_TARGET/1000).toLocaleString('en-GB', {maximumFractionDigits: 2}) + 't — Paris Agreement target',
         ofRemainingBudget: 'of the remaining individual budget',
         researchImpactLink2: 'Labos1point5 — resources for research labs',
+        LMETLink: 'Travelling by train in Europe',
     },
     fr: {
         title: 'Calculateur de l’empreinte carbone d’un évènement',
@@ -195,6 +196,7 @@ const TRANSLATIONS = {
         perspectiveTargetLabel: '' + (PARIS_AGREEMENT_ANNUAL_TARGET/1000).toLocaleString('fr-FR', {maximumFractionDigits: 2}) + 't — objectif Accord de Paris',
         ofRemainingBudget: 'du budget individuel restant',
         researchImpactLink2: 'Labos1point5 — ressources pour les laboratoires de recherche',
+        LMETLink: 'Voyager en train en Europe',
     }
 };
 
@@ -248,6 +250,7 @@ function updateAllText() {
         'methodologyRowOther', 'methodologyRowAir', 'methodologyCoefCar',
         'methodologyCoefTrain', 'methodologyCoefOther', 'methodologyCoefAir',
         'methodologyFormula', 'methodologyNote', 'methodologySource', 'methodologySourceREADME', 'footer', 'footer_source',
+        'LMETLink',
     ];
     simpleIds.forEach(id => {
         const el = document.getElementById(id);
