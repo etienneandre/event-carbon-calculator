@@ -206,6 +206,7 @@ Main colour palette:
 Potential features to add:
 
 - [ ] GeoNames API integration for automatic city/distance lookup
+- [ ] Ability to start a computation and resume it later without losing data
 - [ ] Export to PDF report
 - [ ] Scenario comparison (e.g., "What if we take train instead of flying?")
 - [ ] Integration with event management platforms
