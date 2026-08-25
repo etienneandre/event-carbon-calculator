@@ -7,7 +7,7 @@ Or, even more simple, open [etienne-andre.fr/event-carbon-calculator/](https://w
 
 ---
 
-## Getting Started
+## ▶️ Getting Started
 
 ### Quick Start
 1. **Download** `event-carbon-calculator.html`, as well as the `js/` and `css/` directories
@@ -16,7 +16,7 @@ Or, even more simple, open [etienne-andre.fr/event-carbon-calculator/](https://w
 
 ---
 
-## Features
+## 🧩 Features
 
 ### 🍽️ Meals & Refreshments Section
 Track all food-related emissions during your event:
@@ -37,21 +37,21 @@ Specific computations:
 
 **These figures should be regarded as indicative estimates rather than universal constants.**
 
-### ✈️ Transportation Section
+### 🚄 Transportation Section
 
 - **Number of people**: Multiplies each line
-- **Distance**: Manual entry in kilometers (straight-line distance)
+- **Distance**: Manual entry in kilometers (distance as the crow flies)
 - **Transport modes**:
-  - Walking: 0 emissions
-  - Cycling: 5g CO₂e/km
-  - Car (solo): 215.6 g CO₂e/km
-  - Carpool: 107.8 CO₂e/km (shared by 2)
-  - Train (TGV Europe): 3.3 g CO₂e/km
-  - Train (average Western Europe): 16 g CO₂e/km
-  - Short-haul flights (< 1000 km): 258.6 g CO₂e/km
-  - Medium-haul flights (1000–3000 km): 187.5 g CO₂e/km
-  - Long-haul flights (> 3000 km): 152 g CO₂e/km
-  - Ferry: 138 CO₂e/km
+  - 🚶 Walking: 0 emissions
+  - 🚲 Cycling: 5g CO₂e/km
+  - 🚙 Car (solo): 215.6 g CO₂e/km
+  - 🚙 Carpool: 107.8 CO₂e/km (shared by 2)
+  - 🚄 Train (TGV Europe): 3.3 g CO₂e/km
+  - 🚃 Train (average Western Europe): 16 g CO₂e/km
+  - ✈️ Short-haul flights (< 1000 km): 258.6 g CO₂e/km
+  - ✈️ Medium-haul flights (1000–3000 km): 187.5 g CO₂e/km
+  - ✈️ Long-haul flights (> 3000 km): 152 g CO₂e/km
+  - ⛴ Ferry: 138 CO₂e/km
 
 Data come from [Labos1.5](https://apps.labos1point5.org/) factors; flights include contrails.
 All transportation include combustion, upstream and manufacturing.
@@ -82,12 +82,6 @@ Compare your event or your personal habits to standard everyday scenarios:
 
 Each scenario displays as a percentage of the **Paris Climate Agreement target**.
 
-### 🌐 Language Support
-- **Auto-detection**: App automatically loads in browser language (English or French)
-- **Manual toggle**: Dropdown selector in header to switch languages
-- **Bilingual content**: All text, labels, and calculations update instantly
-
-
 ### 📊 Export Feature
 - **One-click export** to CSV
 - Includes all entered data + calculations
@@ -95,9 +89,16 @@ Each scenario displays as a percentage of the **Paris Climate Agreement target**
 - Named with current export date, e.g.: `carbon-event-2026-01-15.csv`
 - **Entirely local**: File generated and downloaded on your machine—no server upload
 
+
+### 🌐 Language Support
+- **Auto-detection**: App automatically loads in browser language (English or French)
+- **Manual toggle**: Dropdown selector in header to switch languages
+- **Bilingual content**: All text, labels, and calculations update instantly
+
+
 ---
 
-## How Emissions Are Calculated
+## 🧑‍🏫 How Emissions Are Calculated
 
 ### Meals
 ```
@@ -123,7 +124,7 @@ Following Labos1.5 computation method, from the distance as the crow flies betwe
 
 ---
 
-## Privacy & Data
+## 🔒 Privacy & Data
 
 ✅ **100% local, no data collection:**
 
@@ -133,11 +134,11 @@ Following Labos1.5 computation method, from the distance as the crow flies betwe
 - No cookies, no tracking, no storage
 - Can be used offline completely
 - Export file is generated locally and downloaded to your device
-- Only (tiny) exception: an external call is made to `https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js` to display the pie chart
+- Only (small) exception: an external call is made to `https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js` in order to display the pie chart. Removing this line will "simply" prevent the display of the pie chart; all the other computations will remain possible.
 
 ---
 
-## Customization
+## 📝 Customization
 
 ### Changing Emissions Factors
 Edit the constants in `js/constants.js`
@@ -165,7 +166,7 @@ Main colour palette:
 
 ---
 
-## Files Included
+## 📂 Files Included
 
 1. **event-carbon-calculator.html** — Standalone HTML file with its JavaScript files (`js/constants.js` and `js/app.js`) and CSS (`css/style.css`) associated files. No external dependencies. Just open in a browser.
    - Full bilingual support (EN/FR)
@@ -173,7 +174,7 @@ Main colour palette:
    - **Export to CSV** button (for use in spreadsheets)
    - Works offline completely
 
-2. **carbon-calculator-template.py** — Python script to generate an Excel/Calc template.
+2. **carbon-calculator-template.py** — Independent python script to generate an Excel/Calc template.
    - Run: `python3 carbon-calculator-template.py`
    - Creates: `carbon-event-template.xlsx`
    - Sheet 1: Interactive calculator with formulas
@@ -188,7 +189,7 @@ Main colour palette:
 
 ---
 
-## Known Limitations
+## 🚧 Known Limitations
 
 1. **Distance calculation**: Currently requires manual entry. The plan for GeoNames API integration would add automatic distance calculation, but this requires API keys and adds complexity.
 
@@ -200,7 +201,7 @@ Main colour palette:
 
 ---
 
-## Potential Future Enhancements
+## 🚀 Potential Future Enhancements
 
 Potential features to add:
 
@@ -211,14 +212,14 @@ Potential features to add:
 
 ---
 
-## Disclaimer
+## 🤖 Disclaimer
 
-This software was partly generated by generative AI — which uses quite a bit of water and electricity. But it’s for a good cause: if your event convinces just one person to take the train instead of flying, this little simulator will have more than paid for itself 🤓
+The initial version of this software was partly generated by generative AI — which uses quite a bit of water and electricity. But it’s for a good cause: if your event convinces just one person to take the train instead of flying, this little simulator will have more than paid for itself 🤓
 
 
 ---
 
-## Citation
+## 📑 Citation
 
 If you would like to use this calculator for your conference, and if you would like to credit us, simply do a backlink to this Git repository.
 This calculator has no scientific value; if you would still like to cite it in research or publications, cite as:
@@ -227,7 +228,7 @@ This calculator has no scientific value; if you would still like to cite it in r
 
 ---
 
-## Frequently Asked Questions
+## 🙋 Frequently Asked Questions
 
 **Q: Why is train so much lower than plane?**  
 A: Take-off uses enormous fuel relative to cruise. On a 1000 km flight, take-off dominates emissions. On a train, energy is spread over the entire journey, and electric trains use low-carbon grids in Europe.
@@ -249,7 +250,7 @@ A: IPCC recommends ~2.3 tonnes CO₂e per capita per year to limit warming to 1.
 
 ---
 
-## External sources and interesting Websites
+## 🌐 External sources and interesting Websites
 
 ### Interesting resources
 - https://impactco2.fr/outils/alimentation#simulateur
@@ -270,6 +271,8 @@ A: IPCC recommends ~2.3 tonnes CO₂e per capita per year to limit warming to 1.
 - [Greenhouse gas reporting: conversion factors 2024](https://www.gov.uk/government/publications/greenhouse-gas-reporting-conversion-factors-2024) (UK Government, 2024)
 - [You want to reduce the carbon footprint of your food? Focus on what you eat, not whether your food is local](https://ourworldindata.org/food-choice-vs-eating-local) (2020)
 - [Peut-on décemment vivre en émettant moins de deux tonnes de CO2 par an en France ?](https://vert.eco/energie/peut-on-decemment-vivre-en-emettant-moins-de-deux-tonnes-de-co2-par-an-en-france/) (2023)
+
+---
 
 ---
 
