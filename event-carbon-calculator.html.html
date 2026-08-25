@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Carbon Footprint Calculator - Calculate Your Conference Climate Impact</title>
+    <meta name="description" content="Calculate the carbon footprint of your scientific event. Track emissions from meals and transportation with real-time visualization.">
+    <meta name="keywords" content="carbon calculator, event emissions, climate impact, scientific conference, CO₂ footprint">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="header-content">
+                <h1 id="title"><span>🌍</span>Event Carbon Calculator</h1>
+                <p id="subtitle">Calculate the climate impact of your scientific conference</p>
+            </div>
+            <select class="language-selector" id="languageSelect" onchange="changeLanguage(this.value)">
+                <option value="en">English</option>
+                <option value="fr">Français</option>
+            </select>
+        </div>
+    </header>
+
+    <main>
+        <!-- About Section -->
+        <section class="about-section">
+            <h3 id="aboutTitle">ℹ️ About this calculator</h3>
+            <p id="aboutText">This tool helps scientific conferences and events understand and reduce their environmental impact.</p>
+            <p id="disclaimerText" style="font-size: 0.9rem; font-style: italic; color: #777;">This calculator provides estimates based on public data.</p>
+        </section>
+
+        <!-- Participants Input -->
+        <section id="participantsSection">
+            <h2><span>👥</span> <span id="participantsSectionTitle">Event Overview</span></h2>
+            <p class="section-desc" id="participantsDesc">How many people are attending your event?</p>
+            <div class="grid-2">
+                <div class="input-group">
+                    <label id="participantsLabel" for="participants">Number of participants</label>
+                    <input type="number" id="participants" min="1" value="100">
+                    <div class="input-emission" id="participantsNote">This helps calculate per-person impact</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results Section (shown only if there's data) -->
+        <section id="resultsSection" class="hidden">
+            <h2><span>📊</span> <span id="resultsSectionTitle">Event Carbon Footprint</span></h2>
+
+            <div class="results-grid">
+                <div class="result-card total">
+                    <div class="result-label" id="totalEmissionsLabel">Total Emissions</div>
+                    <div class="result-value" id="totalEmissionsValue">0 kg</div>
+                    <div class="result-percent" id="perAttendeeLabel">Per attendee: 0 kg</div>
+                </div>
+                <div class="result-card meals">
+                    <div class="result-label" id="mealsImpactLabel">Meals & Refreshments</div>
+                    <div class="result-value" id="mealsImpactValue">0 kg</div>
+                    <div class="result-percent" id="mealsPercentLabel">0%</div>
+                </div>
+                <div class="result-card transport">
+                    <div class="result-label" id="transportImpactLabel">Transportation</div>
+                    <div class="result-value" id="transportImpactValue">0 kg</div>
+                    <div class="result-percent" id="transportPercentLabel">0%</div>
+                </div>
+            </div>
+
+            <div>
+                <h3 id="breakdownLabel" style="color: #2D5B3F; font-weight: 600; margin-bottom: 1rem;">Breakdown by type</h3>
+                <div class="chart-container">
+                    <canvas id="pieChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- Meals Section -->
+        <section>
+            <h2><span>🍽️</span> <span id="mealsSectionTitle">Meals & Refreshments</span></h2>
+            <p class="section-desc" id="mealsDesc">During the entire event</p>
+
+            <div class="grid-2">
+                <div class="input-group">
+                    <label id="veganLabel" for="vegan">Vegan meals</label>
+                    <input type="number" id="vegan" min="0" value="0">
+                    <div class="input-emission" id="veganEmission">0 kg</div>
+                </div>
+                <div class="input-group">
+                    <label id="vegetarianLabel" for="vegetarian">Vegetarian meals</label>
+                    <input type="number" id="vegetarian" min="0" value="0">
+                    <div class="input-emission" id="vegetarianEmission">0 kg</div>
+                </div>
+                <div class="input-group">
+                    <label id="whiteMeatLabel" for="whiteMeat">White meat meals</label>
+                    <input type="number" id="whiteMeat" min="0" value="0">
+                    <div class="input-emission" id="whiteMeatEmission">0 kg</div>
+                </div>
+                <div class="input-group">
+                    <label id="redMeatLabel" for="redMeat">Red meat meals</label>
+                    <input type="number" id="redMeat" min="0" value="0">
+                    <div class="input-emission" id="redMeatEmission">0 kg</div>
+                </div>
+                <div class="input-group">
+                    <label id="pescetarianLabel" for="pescetarian">Pescetarian meals</label>
+                    <input type="number" id="pescetarian" min="0" value="0">
+                    <div class="input-emission" id="pescetarianEmission">0 kg</div>
+                </div>
+                <div class="input-group">
+                    <label id="coffeeLabel" for="coffeeTeaBreak">Coffee/tea breaks</label>
+                    <input type="number" id="coffeeTeaBreak" min="0" value="0">
+                    <div class="input-emission" id="coffeeEmission">0 kg</div>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <strong id="mealsTotalLabel">Meals impact:</strong> <span id="mealsTotalValue">0 kg</span>
+            </div>
+        </section>
+
+        <!-- Transport Section -->
+        <section>
+            <h2><span>🚄</span> <span id="transportSectionTitle">Transportation</span></h2>
+            <p class="section-desc" id="transportDesc">Add each journey separately</p>
+
+            <div id="journeysContainer"></div>
+
+            <button class="button-primary" onclick="addJourney()" id="addJourneyBtn">
+                <span>+</span>
+                <span id="addJourneyLabel">Add journey</span>
+            </button>
+
+            <div style="display: flex; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap;">
+                <div class="info-box" style="flex: 1; min-width: 200px;">
+                    <strong id="transportTotalLabel">Transport impact:</strong> <span id="transportTotalValue">0 kg</span>
+                </div>
+                <button class="button-primary" onclick="exportToExcel()" id="exportBtn" style="background-color: #E8B859; flex-shrink: 0;">
+                    <span id="exportBtnLabel">📊 Export data in CSV</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Context / Perspective Section -->
+        <section>
+            <h2><span>🎯</span> <span id="contextTitle">A few orders of magnitude</span></h2>
+            <p class="section-desc" id="contextDesc">Putting everyday choices in perspective</p>
+            <p class="section-desc" id="targetDesc" style="line-height: 1.6;">The carbon-neutrality target is 2 tonnes CO₂e per person per year.</p>
+            <p style="margin-bottom: 1.5rem;">
+                <a id="targetLink" href="https://bonpote.com/empreinte-carbone-des-services-publics/" target="_blank" style="color: #2D5B3F; font-size: 0.85rem; text-decoration: underline;">Where do these figures come from?</a>
+            </p>
+
+            <div id="contextContainer"></div>
+        </section>
+
+        <!-- Methodology Explainer Section -->
+        <section class="methodology-section">
+            <h2 id="methodologyTitle"><span>🧭</span>How is travel distance calculated?</h2>
+            <p class="section-desc" id="methodologyIntro">For each journey, you only need to enter the straight-line distance.</p>
+
+            <table class="methodology-table">
+                <thead>
+                    <tr>
+                        <th id="methodologyColMode">Mode</th>
+                        <th id="methodologyColCoefficient">Correction applied to the straight-line distance</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="methodologyRowCar">🚗 Car, carpool</td>
+                        <td id="methodologyCoefCar">× 1.3</td>
+                    </tr>
+                    <tr>
+                        <td id="methodologyRowTrain">🚆 Train (TGV or Western Europe average)</td>
+                        <td id="methodologyCoefTrain">× 1.2</td>
+                    </tr>
+                    <tr>
+                        <td id="methodologyRowOther">🚶 Walking, 🚲 cycling, ⛴️ ferry</td>
+                        <td id="methodologyCoefOther">direct distance (no correction)</td>
+                    </tr>
+                    <tr>
+                        <td id="methodologyRowAir">✈️ Flight</td>
+                        <td id="methodologyCoefAir">+ 95 km (flat)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="methodology-formula" id="methodologyFormula">
+                Emissions of a journey = adjusted distance × emission factor of the mode (per passenger-km) × 2 if round trip
+            </div>
+
+            <p class="methodology-note" id="methodologyNote">Ferry is not covered by the Labos1point5 methodology.</p>
+            <p class="methodology-note" id="methodologySource">
+                <a href="https://apps.labos1point5.org/travels-simulator" target="_blank" style="color: #2D5B3F;">Source: Labos1point5 — travel simulator</a>
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Privacy & Data Section -->
+        <div class="sources-section" style="background-color: #F5F8F7; border-top: none;">
+            <div class="sources-container">
+                <h2 id="privacyTitle" style="margin-top: 0;">🔒 Privacy & Data</h2>
+                <p style="font-size: 0.85rem; color: #666; margin-bottom: 0.5rem;" id="privacyText">
+                    Your data stays on your device.
+                </p>
+                <p style="font-size: 0.8rem; color: #888;" id="privacyTextEnd">
+                    The exported CSV file is generated and downloaded entirely on your machine.
+                </p>
+            </div>
+        </div>
+
+        <!-- About & Disclaimer -->
+        <div class="sources-section">
+            <div class="sources-container">
+                <h2 id="sourcesTitle">📚 Sources & References</h2>
+
+                <div class="sources-grid">
+                    <div class="source-block">
+                        <h4>🍽️ Meal Emissions</h4>
+                        <ul class="source-list">
+                            <li><a href="https://www.notre-environnement.gouv.fr/themes/societe/article/les-effets-de-l-alimentation-sur-l-environnement/">Commissariat général au développement durable</a></li>
+                            <li><a href="https://impactco2.fr/outils/alimentation">Impact CO₂&nbsp;: alimentation</a></li>
+                            <li><a href="https://doi.org/10.54612/a.2n3m2d2pjl">Environmental impact of coffee, tea and cocoa</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="source-block">
+                        <h4>✈️ Transport Emissions</h4>
+                        <ul class="source-list">
+                            <li><a href="https://apps.labos1point5.org/travels-simulator">Labos1point5 — travel simulator (distance methodology)</a></li>
+                        </ul>
+                        <ul class="source-list">
+                            <li><a href="https://www.statistiques.developpement-durable.gouv.fr/media/6514/download">Calcul des émissions de gaz à effet de serre dans l'enquête mobilité des personnes 2019 (2023)</a></li>
+                        </ul>
+
+
+                    </div>
+
+                    <div class="source-block">
+                        <h4>🌍 Climate Context</h4>
+                        <ul class="source-list">
+                            <li><a href="https://nosgestesclimat.fr/" target="_blank">Nos Gestes Climat - ADEME/Datagir footprint simulator</a></li>
+                            <li><a href="https://bonpote.com/empreinte-carbone-des-services-publics/" target="_blank">Bon Pote - Carbon footprint of French public services</a></li>
+                            <li><a href="https://vert.eco/energie/peut-on-decemment-vivre-en-emettant-moins-de-deux-tonnes-de-co2-par-an-en-france/">Vivre en émettant moins de deux tonnes de CO₂ par an</a></li>
+                            <li><a href="https://www.ipcc.ch/" target="_blank">IPCC - Intergovernmental Panel on Climate Change</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="source-block">
+                        <h4>🔬 Reducing Research Impact</h4>
+                        <ul class="source-list">
+                            <li><a href="https://apps.labos1point5.org/ges-1point5/" id="researchImpactLink2">Labos1point5 — resources for research labs</a></li>
+                        </ul>
+                        <ul class="source-list">
+                            <li><a href="https://a3nm.net/git/conference_footprint/" id="linkConferenceFootpring">Conference footprint</a></li>
+                        </ul>
+
+                    </div>
+                </div>
+
+                <div class="resources-grid">
+                    <a href="https://apps.labos1point5.org/ges-1point5/" class="resource-link" target="_blank">
+                        <div class="resource-link-title">🇫🇷 Labos 1point5</div>
+                        <div class="resource-link-desc">French resource on climate science & solutions for research</div>
+                    </a>
+                    <a href="https://nosgestesclimat.fr/" class="resource-link" target="_blank">
+                        <div class="resource-link-title">🧮 Nos Gestes Climat</div>
+                        <div class="resource-link-desc">Official ADEME personal footprint simulator</div>
+                    </a>
+                </div>
+
+                <p style="font-size: 0.8rem; color: #888; margin-top: 1.5rem; border-top: 1px solid #E8B859; padding-top: 1.5rem;" id="footer_source">
+                    Emissions factors based on: Labos1point5, ADEME/Nos Gestes Climat
+                </p>
+                <p style="font-size: 0.8rem; color: #888; " id="footer">
+                    This small simulator is provided by me with absolutely no guarantee, and with the main goal to be as simple as possible, and thus potentially imprecise.
+                    The computation should be regarded as an indicative estimate rather than a result with infinite precision.
+                </p>
+                <p class="copyright">
+                    ©️ <a href="https://www.etienne-andre.fr/">Étienne André</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/constants.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
