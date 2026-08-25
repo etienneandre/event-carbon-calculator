@@ -99,7 +99,7 @@ const TRANSLATIONS = {
         perspectiveLegendRemaining: 'Remaining yearly individual budget (up to ' + (PARIS_AGREEMENT_ANNUAL_TARGET/1000).toLocaleString('en-GB', {maximumFractionDigits: 2}) + 't)',
         perspectiveLegendOver: 'Beyond the ' + (PARIS_AGREEMENT_ANNUAL_TARGET/1000).toLocaleString('en-GB', {maximumFractionDigits: 2}) + '-tonne target',
         perspectiveTargetLabel: '' + (PARIS_AGREEMENT_ANNUAL_TARGET/1000).toLocaleString('en-GB', {maximumFractionDigits: 2}) + 't — Paris Agreement target',
-        ofRemainingBudget: 'of the yearly individual budget',
+        ofRemainingBudget: 'of your yearly individual budget',
         researchImpactLink2: 'Labos1point5 — resources for research labs',
         LMETLink: 'Travelling by train in Europe',
     },
@@ -194,7 +194,7 @@ const TRANSLATIONS = {
         perspectiveLegendRemaining: 'Budget individuel annuel restant (jusqu’à ' + (PARIS_AGREEMENT_ANNUAL_TARGET/1000).toLocaleString('fr-FR', {maximumFractionDigits: 2}) + 't)',
         perspectiveLegendOver: 'Au-delà de l’objectif des ' + (PARIS_AGREEMENT_ANNUAL_TARGET/1000).toLocaleString('fr-FR', {maximumFractionDigits: 2}) + ' tonnes',
         perspectiveTargetLabel: '' + (PARIS_AGREEMENT_ANNUAL_TARGET/1000).toLocaleString('fr-FR', {maximumFractionDigits: 2}) + 't — objectif Accord de Paris',
-        ofRemainingBudget: 'du budget individuel annuel',
+        ofRemainingBudget: 'de votre budget individuel annuel',
         researchImpactLink2: 'Labos1point5 — ressources pour les laboratoires de recherche',
         LMETLink: 'Voyager en train en Europe',
     }
