@@ -3,7 +3,7 @@
 This is a simple (towards simplistic) and hopefully user-friendly single-page application to calculate the climate impact of scientific conferences and events. Available in English and French with real-time calculations and interactive visualisations.
 
 **Live Demo**: Open `event-carbon-calculator.html` directly in any modern Web browser—no installation needed.
-Or, even more simple, open [etienne-andre.fr/event-carbon-calculator/](https://www.etienne-andre.fr/event-carbon-calculator/)
+Or, even more simple, open the live demo version at [etienne-andre.fr/event-carbon-calculator/](https://www.etienne-andre.fr/event-carbon-calculator/)
 
 ---
 

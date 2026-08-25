@@ -94,6 +94,7 @@ const TRANSLATIONS = {
         methodologyFormula: 'Emissions of a journey = adjusted distance × emission factor of the mode (per passenger-km) × 2 if round trip',
         methodologyNote: 'Ferry is not covered by the Labos1point5 methodology; we therefore leave its distance uncorrected, which may slightly underestimate real sea-route distances (which often follow coastlines or straits rather than a straight line).',
         methodologySource: 'Source: Labos1point5 — travel simulator',
+        methodologySourceREADME: 'Additional computation details: ',
         perspectiveLegendPublic: 'Already "spent": French public services (≈' + (FRENCH_PUBLIC_SERVICES_FOOTPRINT / 1000).toLocaleString('en-GB', {maximumFractionDigits: 2}) + 't)',
         perspectiveLegendRemaining: 'Remaining individual budget (up to ' + (PARIS_AGREEMENT_ANNUAL_TARGET/1000).toLocaleString('en-GB', {maximumFractionDigits: 2}) + 't)',
         perspectiveLegendOver: 'Beyond the ' + (PARIS_AGREEMENT_ANNUAL_TARGET/1000).toLocaleString('en-GB', {maximumFractionDigits: 2}) + '-tonne target',
@@ -187,6 +188,7 @@ const TRANSLATIONS = {
         methodologyFormula: 'Émissions d’un trajet = distance ajustée × facteur d’émission du mode (par passager-km) × 2 si aller-retour',
         methodologyNote: 'Le ferry n’est pas couvert par la méthodologie Labos1point5 ; sa distance n’est donc pas corrigée, ce qui peut légèrement sous-estimer la distance réelle des routes maritimes (qui suivent souvent des côtes ou des détroits plutôt qu’une ligne droite).',
         methodologySource: 'Source : Labos1point5 — simulateur de trajets',
+        methodologySourceREADME: 'Détails additionnels sur le calcul: ',
         perspectiveLegendPublic: 'Déjà « dépensé » : services publics français (≈' + (FRENCH_PUBLIC_SERVICES_FOOTPRINT / 1000).toLocaleString('fr-FR', {maximumFractionDigits: 2}) + 't)',
         perspectiveLegendRemaining: 'Budget individuel restant (jusqu’à ' + (PARIS_AGREEMENT_ANNUAL_TARGET/1000).toLocaleString('fr-FR', {maximumFractionDigits: 2}) + 't)',
         perspectiveLegendOver: 'Au-delà de l’objectif des ' + (PARIS_AGREEMENT_ANNUAL_TARGET/1000).toLocaleString('fr-FR', {maximumFractionDigits: 2}) + ' tonnes',
@@ -245,7 +247,7 @@ function updateAllText() {
         'methodologyColCoefficient', 'methodologyRowCar', 'methodologyRowTrain',
         'methodologyRowOther', 'methodologyRowAir', 'methodologyCoefCar',
         'methodologyCoefTrain', 'methodologyCoefOther', 'methodologyCoefAir',
-        'methodologyFormula', 'methodologyNote', 'methodologySource', 'footer', 'footer_source',
+        'methodologyFormula', 'methodologyNote', 'methodologySource', 'methodologySourceREADME', 'footer', 'footer_source',
     ];
     simpleIds.forEach(id => {
         const el = document.getElementById(id);
