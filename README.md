@@ -10,7 +10,7 @@ Or, even more simple, open [etienne-andre.fr/event-carbon-calculator/](https://w
 ## Getting Started
 
 ### Quick Start
-1. **Download** `carbon-calculator.html`
+1. **Download** `event-carbon-calculator.html`, as well as the `js/` and `css/` directories
 2. **Open** in any modern Web browser
 3. **Start entering data** — no installation, no server needed
 
@@ -87,6 +87,14 @@ Each scenario displays as a percentage of the **Paris Climate Agreement target**
 - **Manual toggle**: Dropdown selector in header to switch languages
 - **Bilingual content**: All text, labels, and calculations update instantly
 
+
+### 📊 Export Feature
+- **One-click export** to CSV
+- Includes all entered data + calculations
+- Lists all emissions factors used (for transparency & replication)
+- Named with current export date, e.g.: `carbon-event-2026-01-15.csv`
+- **Entirely local**: File generated and downloaded on your machine—no server upload
+
 ---
 
 ## How Emissions Are Calculated
@@ -112,12 +120,6 @@ Per-participant emissions = total_emissions / participant_count
 
 Following Labos1.5 computation method, from the distance as the crow flies between the city of departure and the city of destination, we apply the following multiplying factors: 1.3 for car travel, and 1.2 for train. For air travel, 95km is added to the raw distance.
 
-### 📊 Export Feature
-- **One-click export** to CSV
-- Includes all entered data + calculations
-- Lists all emissions factors used (for transparency & replication)
-- Named with current export date, e.g.: `carbon-event-2026-01-15.csv`
-- **Entirely local**: File generated and downloaded on your machine—no server upload
 
 ---
 
@@ -131,13 +133,14 @@ Following Labos1.5 computation method, from the distance as the crow flies betwe
 - No cookies, no tracking, no storage
 - Can be used offline completely
 - Export file is generated locally and downloaded to your device
+- Only (tiny) exception: an external call is made to `https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js` to display the pie chart
 
 ---
 
 ## Customization
 
 ### Changing Emissions Factors
-Edit the constants in `constants.js`
+Edit the constants in `js/constants.js`
 
 For example
 ```javascript
@@ -164,7 +167,7 @@ Main colour palette:
 
 ## Files Included
 
-1. **carbon-calculator.html** — Standalone HTML file with its JavaScript files (`js/constants.js` `js/app.js`) and and CSS (`css/style.css`) included. No dependencies. Just open in a browser.
+1. **event-carbon-calculator.html** — Standalone HTML file with its JavaScript files (`js/constants.js` and `js/app.js`) and CSS (`css/style.css`) associated files. No external dependencies. Just open in a browser.
    - Full bilingual support (EN/FR)
    - Real-time calculations & pie chart
    - **Export to CSV** button (for use in spreadsheets)
@@ -224,12 +227,6 @@ This calculator has no scientific value; if you would still like to cite it in r
 
 ---
 
-- **Created**: 2026
-- **Language**: English (with full French translation)
-- **Version**: 1.0
-
----
-
 ## Frequently Asked Questions
 
 **Q: Why is train so much lower than plane?**  
@@ -273,6 +270,12 @@ A: IPCC recommends ~2.3 tonnes CO₂e per capita per year to limit warming to 1.
 - [Greenhouse gas reporting: conversion factors 2024](https://www.gov.uk/government/publications/greenhouse-gas-reporting-conversion-factors-2024) (UK Government, 2024)
 - [You want to reduce the carbon footprint of your food? Focus on what you eat, not whether your food is local](https://ourworldindata.org/food-choice-vs-eating-local) (2020)
 - [Peut-on décemment vivre en émettant moins de deux tonnes de CO2 par an en France ?](https://vert.eco/energie/peut-on-decemment-vivre-en-emettant-moins-de-deux-tonnes-de-co2-par-an-en-france/) (2023)
+
+---
+
+- **Initial creation**: August 2026
+- **Language**: English (with full French translation)
+- **Version**: 1.0
 
 ---
 
