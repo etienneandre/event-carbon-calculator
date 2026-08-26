@@ -43,22 +43,24 @@ Specific computations:
 - **Distance**: Manual entry in kilometers (distance as the crow flies)
 - **Transport modes**:
   - 🚶 Walking: 0 emissions
-  - 🚲 Cycling: 5g CO₂e/km
+  - 🚲 Cycling: 5 g CO₂e/km
+  - 🚍️ Bus: 30.6 g CO₂e/km (interurban bus)
   - 🚙 Car (solo): 215.6 g CO₂e/km
-  - 🚙 Carpool: 107.8 CO₂e/km (shared by 2)
+  - 🚙 Carpool: 107.8 g CO₂e/km (shared by 2)
+  - 🚇️ Subway: 4 g CO₂e/km (taken from Île-de-France métro network)
   - 🚄 Train (TGV Europe): 3.3 g CO₂e/km
   - 🚃 Train (average Western Europe): 16 g CO₂e/km
   - ✈️ Short-haul flights (< 1000 km): 258.6 g CO₂e/km
   - ✈️ Medium-haul flights (1000–3000 km): 187.5 g CO₂e/km
   - ✈️ Long-haul flights (> 3000 km): 152 g CO₂e/km
-  - ⛴ Ferry: 138 CO₂e/km
+  - ⛴ Ferry: 138 g CO₂e/km
 
 Data come from [Labos1.5](https://apps.labos1point5.org/) factors; flights include contrails.
 All transportation include combustion, upstream and manufacturing.
 
 Exception: ferry data come from [Calcul des émissions de gaz à effet de serre dans l'enquête mobilité des personnes 2019 (2023)](https://www.statistiques.developpement-durable.gouv.fr/media/6514/download)
 
-Distance adjustment data (multiplier for car and train; addition of 95km for flights) come from the [Labos1.5 travel simulator](https://apps.labos1point5.org/travels-simulator).
+Distance adjustment data (multiplier for bus, car, subway and train; addition of 95km for flights) come from the [Labos1.5 travel simulator](https://apps.labos1point5.org/travels-simulator).
 
 ### 📊 Results Overview
 

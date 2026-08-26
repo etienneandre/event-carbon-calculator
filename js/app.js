@@ -52,9 +52,11 @@ const TRANSLATIONS = {
         duplicate: 'Duplicate',
         walk: 'Walking',
         bike: 'Bicycle',
+        bus: 'Bus',
         car: 'Car (solo)',
         carpool: 'Carpool',
         ferry: 'Ferry',
+        subway: 'Subway',
         trainTGV: 'Train (high-speed / TGV)',
         trainWestEurope: 'Train (Western Europe average)',
         air: 'Flight',
@@ -83,11 +85,15 @@ const TRANSLATIONS = {
         methodologyIntro: 'For each journey, you only need to enter the straight-line ("as the crow flies") distance between departure and arrival. The calculator then applies the same distance-correction method as the Labos1point5 travel simulator, widely used by French research labs for their own carbon accounting, to approximate real travelled distance:',
         methodologyColMode: 'Mode',
         methodologyColCoefficient: 'Correction applied to the straight-line distance',
+        methodologyRowBus: '🚍️ Bus',
         methodologyRowCar: '🚗 Car, carpool',
+        methodologyRowSubway: '🚇️ Subway',
         methodologyRowTrain: '🚆 Train (TGV or Western Europe average)',
         methodologyRowOther: '🚶 Walking, 🚲 cycling, ⛴️ ferry',
         methodologyRowAir: '✈️ Flight',
+        methodologyCoefBus: '× 1.5',
         methodologyCoefCar: '× 1.3',
+        methodologyCoefSubway: '× 1.7',
         methodologyCoefTrain: '× 1.2',
         methodologyCoefOther: 'direct distance (no correction)',
         methodologyCoefAir: '+ 95 km (flat, for taxiing / take-off / landing routing)',
@@ -147,9 +153,11 @@ const TRANSLATIONS = {
         duplicate: 'Dupliquer',
         walk: 'À pied',
         bike: 'Vélo',
+        bus: 'Bus',
         car: 'Voiture (seul⋅e)',
         carpool: 'Covoiturage',
         ferry: 'Ferry',
+        subway: 'Métro',
         trainTGV: 'Train (grande vitesse / TGV)',
         trainWestEurope: 'Train (moyenne Europe de l’Ouest)',
         air: 'Avion',
@@ -178,11 +186,15 @@ const TRANSLATIONS = {
         methodologyIntro: 'Pour chaque trajet, il suffit d’indiquer la distance à vol d’oiseau entre le départ et l’arrivée. Le calculateur applique ensuite la même méthode de correction de distance que le simulateur de trajets de Labos1point5, largement utilisé par les laboratoires de recherche français pour leurs bilans carbone, afin d’approcher la distance réellement parcourue :',
         methodologyColMode: 'Mode',
         methodologyColCoefficient: 'Correction appliquée à la distance à vol d’oiseau',
+         methodologyRowBus: '🚍️ Bus',
         methodologyRowCar: '🚗 Voiture, covoiturage',
+        methodologyRowSubway: '🚇️ Métro',
         methodologyRowTrain: '🚆 Train (TGV ou moyenne Europe de l’Ouest)',
         methodologyRowOther: '🚶 Marche, 🚲 vélo, ⛴️ ferry',
         methodologyRowAir: '✈️ Avion',
+        methodologyCoefBus: '× 1,5',
         methodologyCoefCar: '× 1,3',
+        methodologyCoefSubway: '× 1,7',
         methodologyCoefTrain: '× 1,2',
         methodologyCoefOther: 'distance directe (aucune correction)',
         methodologyCoefAir: '+ 95 km (forfait roulage / décollage / atterrissage)',
@@ -209,7 +221,7 @@ let journeyCounter = 0;
 let journeys = [];
 let pieChart = null;
 
-const TRANSPORT_MODES = ['walk', 'bike', 'car', 'carpool', 'ferry', 'trainTGV', 'trainWestEurope', 'air'];
+const TRANSPORT_MODES = ['walk', 'bike', 'bus', 'car', 'carpool', 'ferry', 'subway', 'trainTGV', 'trainWestEurope', 'air'];
 const MEAL_KEYS = ['vegan', 'vegetarian', 'whiteMeat', 'redMeat', 'pescetarian'];
 
 // ----------------------------------------------------------------------------
@@ -246,9 +258,9 @@ function updateAllText() {
         'participantsLabel', 'participantsDesc', 'participantsNote',
         'sourcesTitle', 'privacyTitle', 'privacyText', 'privacyTextEnd',
         'methodologyTitle', 'methodologyIntro', 'methodologyColMode',
-        'methodologyColCoefficient', 'methodologyRowCar', 'methodologyRowTrain',
-        'methodologyRowOther', 'methodologyRowAir', 'methodologyCoefCar',
-        'methodologyCoefTrain', 'methodologyCoefOther', 'methodologyCoefAir',
+        'methodologyColCoefficient', 'methodologyRowBus', 'methodologyRowCar', 'methodologyRowSubway', 'methodologyRowTrain',
+        'methodologyRowOther', 'methodologyRowAir',
+        'methodologyCoefBus', 'methodologyCoefCar', 'methodologyCoefSubway', 'methodologyCoefTrain', 'methodologyCoefOther', 'methodologyCoefAir',
         'methodologyFormula', 'methodologyNote', 'methodologySource', 'methodologySourceREADME', 'footer', 'footer_source',
         'LMETLink',
     ];
@@ -305,9 +317,11 @@ function getJourneyFactorAndAdjustedDistance(mode, greatCircleKm) {
     let factor = 0;
     if (mode === 'walk') factor = TRANSPORT_FACTORS.walk;
     else if (mode === 'bike') factor = TRANSPORT_FACTORS.bike;
+    else if (mode === 'bus') factor = TRANSPORT_FACTORS.bus;
     else if (mode === 'car') factor = TRANSPORT_FACTORS.car;
     else if (mode === 'carpool') factor = TRANSPORT_FACTORS.carpool;
     else if (mode === 'ferry') factor = TRANSPORT_FACTORS.ferry;
+    else if (mode === 'subway') factor = TRANSPORT_FACTORS.subway;
     else if (mode === 'trainTGV') factor = TRANSPORT_FACTORS.trainTGV;
     else if (mode === 'trainWestEurope') factor = TRANSPORT_FACTORS.trainWestEurope;
     else if (mode === 'air') factor = getFlightFactor(adjustedDistance);

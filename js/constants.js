@@ -38,9 +38,11 @@ const COFFEE_TEA_BREAK_FACTOR = 0.313; // kg CO2e per coffee/tea break
 const TRANSPORT_FACTORS = {
     walk: 0,
     bike: 5,
+    bus: 30.6,
     car: 215.6,
     carpool: 107.8,
     ferry: 138,
+    subway: 4,
     trainTGV: 3.3,
     trainWestEurope: 16,
     airShort: 258.6,
@@ -120,9 +122,11 @@ const CATEGORY_COLORS = {
     coffeeTeaBreak: '#6F4E37',
     walk: '#A8DADC',
     bike: '#52B788',
+    bus: '#00B788', // Randomly set
     car: '#6C757D',
     carpool: '#9AA5AD',
     ferry: '#1D3557',
+    subway: '#662483', // Ligne 14 du métro de Paris
     trainTGV: '#8E44AD',
     trainWestEurope: '#C8A2C8',
     air: '#E67E22',
