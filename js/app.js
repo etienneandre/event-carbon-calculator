@@ -589,13 +589,13 @@ function getPerspectiveScenarios() {
         {
             key: 'yearRedMeat',
             label: t('yearRedMeat'),
-            value: 365 * MEAL_FACTORS.redMeat,
+            value: 365 * MEAL_FACTORS.redMeat + 365 * MEAL_FACTORS.whiteMeat + 0.5 * 365 * MEAL_FACTORS.vegetarian,
             color: CATEGORY_COLORS.redMeat,
         },
         {
             key: 'yearVegan',
             label: t('yearVegan'),
-            value: 365 * MEAL_FACTORS.vegan,
+            value: 2.5 * 365 * MEAL_FACTORS.vegan,
             color: CATEGORY_COLORS.vegan,
         },
         {

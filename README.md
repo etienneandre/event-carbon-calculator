@@ -73,7 +73,7 @@ Distance adjustment data (multiplier for car and train; addition of 95km for fli
 ### 🌍 Context Section
 Compare your event or your personal habits to standard everyday scenarios:
 
-- **Year of daily red meat**
+- **Year of daily red meat**: computed as one daily meal with red meat + one daily meal with white meat (or fish) + half a daily vegetarian meal (breakfast)
 - **Year of vegan diet**
 - **Paris–Berlin by train**
 - **Paris–Berlin by car**
