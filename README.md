@@ -239,9 +239,6 @@ A: Take-off uses enormous fuel relative to cruise. On a 1000 km flight, take-off
 **Q: Can I use this for events outside Europe?**  
 A: Yes, but adjust the train factor if your region uses coal-heavy grids. Car emissions are universal-ish. Flight emissions are consistent. Meal factors are based on global agricultural practices.
 
-**Q: What about carbon offsets?**  
-A: This calculator shows real emissions. Offsets are mentioned in context (Paris target), but purchasing offsets is a separate decision. The calculator helps understand what needs offsetting.
-
 **Q: Does this include Scope 3 emissions (supply chain)?**  
 A: Yes, all meal and transport factors are "cradle to home" or "well to wheel," including:
   - Meal: Growing, processing, transporting, cooking
