@@ -72,9 +72,11 @@ const TRANSPORT_FACTORS = {
 const DISTANCE_MULTIPLIERS = {
     walk: 1,
     bike: 1,
+    bus: 1.5,
     car: 1.3,
     carpool: 1.3,
     ferry: 1, // not covered by Labos1point5 — direct distance used, see note above
+    subway: 1.7,
     trainTGV: 1.2,
     trainWestEurope: 1.2,
 };
