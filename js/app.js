@@ -108,6 +108,25 @@ const TRANSLATIONS = {
         ofRemainingBudget: 'of your yearly individual budget',
         researchImpactLink2: 'Labos1point5 — resources for research labs',
         LMETLink: 'Travelling by train in Europe',
+        methodologyColFactor: 'Emission factor (g CO₂e per passenger-km)',
+        methodologyRowAirShort: '✈️ Flight — short-haul (< 1,000 km)',
+        methodologyRowAirMedium: '✈️ Flight — medium-haul (1,000–3,000 km)',
+        methodologyRowAirLong: '✈️ Flight — long-haul (> 3,000 km)',
+        mealsMethodologyTitle: '🍲 How are meals calculated?',
+        mealsMethodologyIntro: 'Each meal type is assigned a fixed carbon factor, applied per meal served:',
+        mealsMethodologyColType: 'Meal type',
+        mealsMethodologyColFactor: 'Factor (kg CO₂e per meal)',
+        mealsMethodologyDetails: 'Most of these factors come from the French Commissariat général au développement durable (notre-environnement.gouv.fr). Two exceptions: the pescetarian factor is the average of a meal with oily fish (1.11 kg) and one with white fish (1.98 kg); the coffee/tea break factor combines half a brownie (25g) and half a croissant (25g) with a coffee, based on ImpactCO2.fr and a peer-reviewed lifecycle study of coffee preparation.',
+        mealsMethodologyDisclaimer: 'These figures should be regarded as indicative estimates rather than universal constants.',
+        faqSectionTitle: 'Frequently Asked Questions',
+        faqTrainPlaneQ: 'Why is train so much lower than plane?',
+        faqTrainPlaneA: 'Take-off uses an enormous amount of fuel relative to cruising. On a short flight, take-off dominates total emissions. On a train, energy use is spread over the whole journey, and electric trains — especially in France — run on a low-carbon grid.',
+        faqOutsideEuropeQ: 'Can I use this for events outside Europe?',
+        faqOutsideEuropeA: 'Yes, but keep in mind the train factor reflects French/Western-European grids; adjust it if your region relies more on coal or gas for electricity. Car and flight emissions are fairly universal. Meal factors are based on French/European agricultural data and may not perfectly match other regions.',
+        faqScope3Q: 'Does this include Scope 3 emissions (supply chain)?',
+        faqScope3A: 'Yes. Meal factors are "farm to plate" (growing, processing, transport, cooking) and transport factors are lifecycle-based (vehicle/aircraft manufacturing, fuel extraction, maintenance), including non-CO₂ aviation effects such as contrails and NOx where the source accounts for them.',
+        faqTargetQ: 'Why use ' + (PARIS_AGREEMENT_ANNUAL_TARGET/1000).toLocaleString('en-GB', {maximumFractionDigits: 2}) + ' tonnes as the target?',
+        faqTargetA: (PARIS_AGREEMENT_ANNUAL_TARGET/1000).toLocaleString('en-GB', {maximumFractionDigits: 2}) + ' tonnes CO₂e per person per year is a commonly-cited estimate of what\u2019s compatible with limiting warming to well below 2°C (and ideally 1.5°C) under the Paris Agreement, once the world\u2019s population and remaining carbon budget are taken into account. Exact figures vary by source and methodology — treat it as an order of magnitude, not an exact threshold.',
     },
     fr: {
         title: 'Calculateur de l’empreinte carbone d’un évènement',
@@ -209,6 +228,25 @@ const TRANSLATIONS = {
         ofRemainingBudget: 'de votre budget individuel annuel',
         researchImpactLink2: 'Labos1point5 — ressources pour les laboratoires de recherche',
         LMETLink: 'Voyager en train en Europe',
+        methodologyColFactor: 'Facteur d’émission (g CO₂e par passager-km)',
+        methodologyRowAirShort: '✈️ Avion — court-courrier (< 1 000 km)',
+        methodologyRowAirMedium: '✈️ Avion — moyen-courrier (1 000–3 000 km)',
+        methodologyRowAirLong: '✈️ Avion — long-courrier (> 3 000 km)',
+        mealsMethodologyTitle: '🍲 Comment les repas sont-ils calculés ?',
+        mealsMethodologyIntro: 'Chaque type de repas se voit attribuer un facteur carbone fixe, appliqué par repas servi :',
+        mealsMethodologyColType: 'Type de repas',
+        mealsMethodologyColFactor: 'Facteur (kg CO₂e par repas)',
+        mealsMethodologyDetails: 'La plupart de ces facteurs proviennent de notre-environnement.gouv.fr. Deux exceptions : le facteur du repas pescétarien est la moyenne d’un repas avec poisson gras (1,11 kg) et d’un repas avec poisson blanc (1,98 kg) ; le facteur des pauses café/thé combine un demi brownie (25g) et un demi croissant (25g) avec un café, sur la base d’ImpactCO2.fr et d’une étude scientifique du cycle de vie du café.',
+        mealsMethodologyDisclaimer: 'Ces chiffres doivent être considérés comme des estimations indicatives plutôt que comme des constantes universelles.',
+        faqSectionTitle: 'Foire aux questions',
+        faqTrainPlaneQ: 'Pourquoi le train émet-il tellement moins que l’avion ?',
+        faqTrainPlaneA: 'Le décollage consomme énormément de carburant par rapport à la croisière. Sur un vol court courrier, le décollage domine les émissions totales. Dans un train, l’énergie est répartie sur tout le trajet, et les trains électriques — en particulier en France — utilisent un réseau électrique très peu carboné.',
+        faqOutsideEuropeQ: 'Puis-je utiliser ce calculateur pour un événement hors d’Europe ?',
+        faqOutsideEuropeA: 'Oui, mais gardez à l’esprit que le facteur train reflète le réseau électrique français/ouest-européen ; ajustez-le si votre région dépend davantage du charbon ou du gaz. Les émissions de voiture et d’avion sont assez universelles. Les facteurs alimentaires sont basés sur des données agricoles françaises/européennes et peuvent ne pas correspondre parfaitement à d’autres régions.',
+        faqScope3Q: 'Est-ce que cela inclut les émissions de la chaîne d’approvisionnement ?',
+        faqScope3A: 'Oui. Les facteurs alimentaires sont calculés « de la ferme à l’assiette » (production, transformation, transport, cuisson), et les facteurs de transport intègrent tout le cycle de vie (fabrication du véhicule/avion, extraction du carburant, maintenance), y compris les effets non-CO₂ de l’aviation comme les traînées de condensation et les NOx lorsque la source les prend en compte.',
+        faqTargetQ: 'Pourquoi utiliser ' + (PARIS_AGREEMENT_ANNUAL_TARGET/1000).toLocaleString('fr-FR', {maximumFractionDigits: 2}) + ' tonnes comme objectif ?',
+        faqTargetA: (PARIS_AGREEMENT_ANNUAL_TARGET/1000).toLocaleString('fr-FR', {maximumFractionDigits: 2}) + ' tonnes de CO₂e par personne et par an est une estimation couramment citée de ce qui serait compatible avec l’objectif de l’Accord de Paris de limiter le réchauffement bien en-dessous de 2°C (et idéalement à 1,5°C), une fois pris en compte la population mondiale et le budget carbone restant. Les chiffres exacts varient selon les sources et méthodologies — à considérer comme un ordre de grandeur, pas un seuil exact.',
     }
 };
 
@@ -223,6 +261,29 @@ let pieChart = null;
 
 const TRANSPORT_MODES = ['walk', 'bike', 'bus', 'car', 'carpool', 'ferry', 'subway', 'trainTGV', 'trainWestEurope', 'air'];
 const MEAL_KEYS = ['vegan', 'vegetarian', 'whiteMeat', 'redMeat', 'pescetarian'];
+
+// Rows for the transport methodology table: mode key, emoji (not translated),
+// and which existing translated coefficient string applies. Reuses the mode
+// labels (t(mode)) and coefficient labels already defined for journeys, so
+// this table never needs its own duplicate set of translations.
+const METHODOLOGY_ROWS = [
+    { mode: 'walk', emoji: '🚶', coefKey: 'methodologyCoefOther' },
+    { mode: 'bike', emoji: '🚲', coefKey: 'methodologyCoefOther' },
+    { mode: 'ferry', emoji: '⛴️', coefKey: 'methodologyCoefOther' },
+    { mode: 'bus', emoji: '🚍️', coefKey: 'methodologyCoefBus' },
+    { mode: 'subway', emoji: '🚇️', coefKey: 'methodologyCoefSubway' },
+    { mode: 'car', emoji: '🚗', coefKey: 'methodologyCoefCar' },
+    { mode: 'carpool', emoji: '🚘', coefKey: 'methodologyCoefCar' },
+    { mode: 'trainTGV', emoji: '🚄', coefKey: 'methodologyCoefTrain' },
+    { mode: 'trainWestEurope', emoji: '🚆', coefKey: 'methodologyCoefTrain' },
+];
+// Flights aren't user-selectable by band (the band is auto-picked from
+// distance), so they get their own row labels rather than reusing t(mode).
+const METHODOLOGY_FLIGHT_ROWS = [
+    { labelKey: 'methodologyRowAirShort', factorKey: 'airShort' },
+    { labelKey: 'methodologyRowAirMedium', factorKey: 'airMedium' },
+    { labelKey: 'methodologyRowAirLong', factorKey: 'airLong' },
+];
 
 // ----------------------------------------------------------------------------
 // UTILITY FUNCTIONS
@@ -246,6 +307,53 @@ function changeLanguage(lang) {
     updateCalculations();
 }
 
+function formatFactorNumber(value) {
+    return value.toLocaleString(currentLanguage === 'fr' ? 'fr-FR' : 'en-GB', { maximumFractionDigits: 3 });
+}
+
+/**
+ * Builds the transport methodology table body straight from
+ * TRANSPORT_FACTORS / DISTANCE_MULTIPLIERS (constants.js), so it can never
+ * go stale if those constants are tuned later.
+ */
+function renderMethodologyTable() {
+    const tbody = document.getElementById('methodologyTableBody');
+    if (!tbody) return;
+    let html = METHODOLOGY_ROWS.map(r => `
+        <tr>
+            <td>${r.emoji} ${t(r.mode)}</td>
+            <td>${t(r.coefKey)}</td>
+            <td>${formatFactorNumber(TRANSPORT_FACTORS[r.mode])}</td>
+        </tr>`).join('');
+    html += METHODOLOGY_FLIGHT_ROWS.map(r => `
+        <tr>
+            <td>${t(r.labelKey)}</td>
+            <td>${t('methodologyCoefAir')}</td>
+            <td>${formatFactorNumber(TRANSPORT_FACTORS[r.factorKey])}</td>
+        </tr>`).join('');
+    tbody.innerHTML = html;
+}
+
+/**
+ * Builds the meal methodology table body straight from MEAL_FACTORS /
+ * COFFEE_TEA_BREAK_FACTOR (constants.js).
+ */
+function renderMealsMethodologyTable() {
+    const tbody = document.getElementById('mealsMethodologyTableBody');
+    if (!tbody) return;
+    let html = MEAL_KEYS.map(key => `
+        <tr>
+            <td>${t(key + 'Label')}</td>
+            <td>${formatFactorNumber(MEAL_FACTORS[key])}</td>
+        </tr>`).join('');
+    html += `
+        <tr>
+            <td>${t('coffeeLabel')}</td>
+            <td>${formatFactorNumber(COFFEE_TEA_BREAK_FACTOR)}</td>
+        </tr>`;
+    tbody.innerHTML = html;
+}
+
 function updateAllText() {
     const simpleIds = [
         'title', 'subtitle', 'mealsSectionTitle', 'mealsDesc', 'veganLabel',
@@ -262,7 +370,12 @@ function updateAllText() {
         'methodologyRowOther', 'methodologyRowAir',
         'methodologyCoefBus', 'methodologyCoefCar', 'methodologyCoefSubway', 'methodologyCoefTrain', 'methodologyCoefOther', 'methodologyCoefAir',
         'methodologyFormula', 'methodologyNote', 'methodologySource', 'methodologySourceREADME', 'footer', 'footer_source',
-        'LMETLink',
+        'LMETLink', 'methodologyColFactor',
+        'mealsMethodologyTitle', 'mealsMethodologyIntro', 'mealsMethodologyColType',
+        'mealsMethodologyColFactor', 'mealsMethodologyDetails', 'mealsMethodologyDisclaimer',
+        'faqSectionTitle', 'faqTrainPlaneQ', 'faqTrainPlaneA', 'faqOutsideEuropeQ',
+        'faqOutsideEuropeA', 'faqOffsetsQ', 'faqOffsetsA', 'faqScope3Q', 'faqScope3A',
+        'faqTargetQ', 'faqTargetA',
     ];
     simpleIds.forEach(id => {
         const el = document.getElementById(id);
@@ -295,6 +408,8 @@ function updateAllText() {
     journeys.forEach(j => updateJourneyCardLabels(j.id));
 
     updatePerspectiveStaticLabels();
+    renderMethodologyTable();
+    renderMealsMethodologyTable();
 }
 
 // ----------------------------------------------------------------------------
@@ -309,7 +424,7 @@ function calculateMealEmissions() {
 }
 
 /**
- * Computes the emission factor (g CO2e/passenger-km) and adjusted distance
+ * Computes the emission factor (g CO₂e/passenger-km) and adjusted distance
  * (km, already including the Labos1point5 correction) for a given journey.
  */
 function getJourneyFactorAndAdjustedDistance(mode, greatCircleKm) {
@@ -337,7 +452,7 @@ function calculateJourneyEmission(journey) {
     if (distance <= 0) return 0;
 
     const { factor, adjustedDistance } = getJourneyFactorAndAdjustedDistance(mode, distance);
-    const oneWay = (people * adjustedDistance * factor) / 1000; // kg CO2e
+    const oneWay = (people * adjustedDistance * factor) / 1000; // kg CO₂e
     return roundTrip ? oneWay * 2 : oneWay;
 }
 
@@ -590,7 +705,7 @@ function duplicateJourney(id) {
 // ----------------------------------------------------------------------------
 
 /**
- * Emissions (kg CO2e, round trip) of a reference journey travelled by a
+ * Emissions (kg CO₂e, round trip) of a reference journey travelled by a
  * given mode, using the Labos1point5 distance-adjustment methodology.
  */
 function computeReferenceJourneyEmissions(mode, greatCircleKm) {
@@ -731,7 +846,7 @@ function exportToExcel() {
     csv += `Attendees,${parseInt(document.getElementById('participants').value || 0)}\n\n`;
 
     csv += 'MEALS & REFRESHMENTS\n';
-    csv += 'Category,Count,Factor (kg CO2e),Total (kg CO2e)\n';
+    csv += 'Category,Count,Factor (kg CO₂e),Total (kg CO₂e)\n';
     MEAL_KEYS.forEach(key => {
         const count = parseInt(document.getElementById(key).value || 0);
         csv += `${key},${count},${MEAL_FACTORS[key]},${(count * MEAL_FACTORS[key]).toFixed(2)}\n`;
@@ -743,7 +858,7 @@ function exportToExcel() {
     csv += `\nTOTAL MEALS,,,${mealEmissions.toFixed(2)}\n\n`;
 
     csv += 'TRANSPORTATION\n';
-    csv += 'People,Distance as the crow flies (km),Mode,Round trip,Adjusted distance (km),Factor (g CO2e/pkm),Total (kg CO2e)\n';
+    csv += 'People,Distance as the crow flies (km),Mode,Round trip,Adjusted distance (km),Factor (g CO₂e/pkm),Total (kg CO₂e)\n';
     journeys.forEach(j => {
         const emission = calculateJourneyEmission(j);
         const { factor, adjustedDistance } = getJourneyFactorAndAdjustedDistance(j.mode, parseFloat(j.distance) || 0);
@@ -758,25 +873,25 @@ function exportToExcel() {
     const perAttendee = totalEmissions / participantCount;
 
     csv += 'SUMMARY\n';
-    csv += `Total Emissions (kg CO2e),${totalEmissions.toFixed(2)}\n`;
-    csv += `Per Attendee (kg CO2e),${perAttendee.toFixed(2)}\n`;
-    csv += `Meals Impact (kg CO2e),${mealEmissions.toFixed(2)}\n`;
-    csv += `Transport Impact (kg CO2e),${transportEmissions.toFixed(2)}\n`;
+    csv += `Total Emissions (kg CO₂e),${totalEmissions.toFixed(2)}\n`;
+    csv += `Per Attendee (kg CO₂e),${perAttendee.toFixed(2)}\n`;
+    csv += `Meals Impact (kg CO₂e),${mealEmissions.toFixed(2)}\n`;
+    csv += `Transport Impact (kg CO₂e),${transportEmissions.toFixed(2)}\n`;
     if (totalEmissions > 0) {
         csv += `Emissions from Meals (%),${((mealEmissions / totalEmissions) * 100).toFixed(1)}\n`;
         csv += `Emissions from Transport (%),${((transportEmissions / totalEmissions) * 100).toFixed(1)}\n\n`;
     }
 
     csv += 'EMISSIONS FACTORS USED\n';
-    csv += '\nMeals (kg CO2e per meal):\n';
+    csv += '\nMeals (kg CO₂e per meal):\n';
     MEAL_KEYS.forEach(key => { csv += `${key},${MEAL_FACTORS[key]}\n`; });
     csv += `Coffee/Tea,${COFFEE_TEA_BREAK_FACTOR}\n`;
-    csv += '\nTransport (g CO2e per passenger-km, applied to Labos1point5-adjusted distance):\n';
+    csv += '\nTransport (g CO₂e per passenger-km, applied to Labos1point5-adjusted distance):\n';
     Object.entries(TRANSPORT_FACTORS).forEach(([mode, factor]) => { csv += `${mode},${factor}\n`; });
     csv += '\nDistance correction (Labos1point5 methodology):\n';
     Object.entries(DISTANCE_MULTIPLIERS).forEach(([mode, mult]) => { csv += `${mode},x${mult}\n`; });
     csv += `air,+${AIR_DISTANCE_ADDITION_KM}km flat\n`;
-    csv += '\nClimate context (kg CO2e per person per year):\n';
+    csv += '\nClimate context (kg CO₂e per person per year):\n';
     csv += `Paris Agreement annual target,${PARIS_AGREEMENT_ANNUAL_TARGET}\n`;
     csv += `French public services footprint,${FRENCH_PUBLIC_SERVICES_FOOTPRINT}\n`;
     csv += `Remaining individual budget,${INDIVIDUAL_ACTIONABLE_BUDGET}\n`;

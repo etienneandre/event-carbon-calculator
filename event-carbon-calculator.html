@@ -139,6 +139,30 @@
             </div>
         </section>
 
+        <!-- Meal Methodology Explainer Section -->
+        <section class="methodology-section">
+            <h2 id="mealsMethodologyTitle"><span>🍲</span>How are meals calculated?</h2>
+            <p class="section-desc" id="mealsMethodologyIntro">Each meal type is assigned a fixed carbon factor.</p>
+
+            <table class="methodology-table">
+                <thead>
+                    <tr>
+                        <th id="mealsMethodologyColType">Meal type</th>
+                        <th id="mealsMethodologyColFactor">Factor (kg CO₂e per meal)</th>
+                    </tr>
+                </thead>
+                <tbody id="mealsMethodologyTableBody"></tbody>
+            </table>
+
+            <p class="methodology-note" id="mealsMethodologyDetails">Most of these factors come from notre-environnement.gouv.fr.</p>
+            <p class="methodology-note" id="mealsMethodologyDisclaimer">These figures should be regarded as indicative estimates rather than universal constants.</p>
+            <p class="methodology-note">
+                <a href="https://www.notre-environnement.gouv.fr/themes/societe/article/les-effets-de-l-alimentation-sur-l-environnement/" target="_blank" style="color: #2D5B3F;">notre-environnement.gouv.fr</a>
+                · <a href="https://impactco2.fr/outils/alimentation" target="_blank" style="color: #2D5B3F;">ImpactCO2.fr</a>
+                · <a href="https://doi.org/10.54612/a.2n3m2d2pjl" target="_blank" style="color: #2D5B3F;">Coffee/tea lifecycle study</a>
+            </p>
+        </section>
+
         <!-- Methodology Explainer Section -->
         <section class="methodology-section">
             <h2 id="methodologyTitle"><span>🧭</span>How is travel distance calculated?</h2>
@@ -149,34 +173,10 @@
                     <tr>
                         <th id="methodologyColMode">Mode</th>
                         <th id="methodologyColCoefficient">Correction applied to the straight-line distance</th>
+                        <th id="methodologyColFactor">Emission factor (g CO₂e per passenger-km)</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td id="methodologyRowBus">🚍️ Bus</td>
-                        <td id="methodologyCoefBus">× 1.5</td>
-                    </tr>
-                    <tr>
-                        <td id="methodologyRowCar">🚗 Car, carpool</td>
-                        <td id="methodologyCoefCar">× 1.3</td>
-                    </tr>
-                    <tr>
-                        <td id="methodologyRowSubway">🚇️ Subway</td>
-                        <td id="methodologyCoefSubway">× 1.7</td>
-                    </tr>
-                    <tr>
-                        <td id="methodologyRowTrain">🚆 Train</td>
-                        <td id="methodologyCoefTrain">× 1.2</td>
-                    </tr>
-                    <tr>
-                        <td id="methodologyRowOther">🚶 Walking, 🚲 cycling, ⛴️ ferry</td>
-                        <td id="methodologyCoefOther">direct distance (no correction)</td>
-                    </tr>
-                    <tr>
-                        <td id="methodologyRowAir">✈️ Flight</td>
-                        <td id="methodologyCoefAir">+ 95 km (flat)</td>
-                    </tr>
-                </tbody>
+                <tbody id="methodologyTableBody"></tbody>
             </table>
 
             <div class="methodology-formula" id="methodologyFormula">
@@ -205,6 +205,28 @@
             <div id="contextContainer"></div>
         </section>
 
+        <!-- FAQ Section -->
+        <section>
+            <h2><span>🙋</span> <span id="faqSectionTitle">Frequently Asked Questions</span></h2>
+
+            <div style="margin-bottom: 1.5rem;">
+                <h3 id="faqTrainPlaneQ" style="color: #2D5B3F; font-weight: 600; margin-bottom: 0.4rem; font-size: 1rem;">Why is train so much lower than plane?</h3>
+                <p id="faqTrainPlaneA" style="color: #555; font-size: 0.95rem;"></p>
+            </div>
+            <div style="margin-bottom: 1.5rem;">
+                <h3 id="faqOutsideEuropeQ" style="color: #2D5B3F; font-weight: 600; margin-bottom: 0.4rem; font-size: 1rem;">Can I use this for events outside Europe?</h3>
+                <p id="faqOutsideEuropeA" style="color: #555; font-size: 0.95rem;"></p>
+            </div>
+            <div style="margin-bottom: 1.5rem;">
+                <h3 id="faqScope3Q" style="color: #2D5B3F; font-weight: 600; margin-bottom: 0.4rem; font-size: 1rem;">Does this include Scope 3 emissions (supply chain)?</h3>
+                <p id="faqScope3A" style="color: #555; font-size: 0.95rem;"></p>
+            </div>
+            <div>
+                <h3 id="faqTargetQ" style="color: #2D5B3F; font-weight: 600; margin-bottom: 0.4rem; font-size: 1rem;">Why use this target?</h3>
+                <p id="faqTargetA" style="color: #555; font-size: 0.95rem;"></p>
+            </div>
+        </section>
+
 
     </main>
 
@@ -231,7 +253,7 @@
                     <div class="source-block">
                         <h3>🍽️ Meal Emissions</h3>
                         <ul class="source-list">
-                            <li><a href="https://www.notre-environnement.gouv.fr/themes/societe/article/les-effets-de-l-alimentation-sur-l-environnement/">Commissariat général au développement durable</a></li>
+                            <li><a href="https://www.notre-environnement.gouv.fr/themes/societe/article/les-effets-de-l-alimentation-sur-l-environnement/">Les effets de l’alimentation sur l’environnement</a></li>
                             <li><a href="https://impactco2.fr/outils/alimentation">Impact CO₂&nbsp;: alimentation</a></li>
                             <li><a href="https://doi.org/10.54612/a.2n3m2d2pjl">Environmental impact of coffee, tea and cocoa</a></li>
                         </ul>
