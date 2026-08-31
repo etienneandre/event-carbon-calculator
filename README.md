@@ -76,6 +76,7 @@ Distance adjustment data (multiplier for bus, car, subway and train; addition of
 Compare your event or your personal habits to standard everyday scenarios:
 
 - **Year of daily red meat**: computed as one daily meal with red meat + one daily meal with white meat (or fish) + half a daily vegetarian meal (breakfast)
+- **Year of vegetarian diet**
 - **Year of vegan diet**
 - **Paris–Berlin by train**
 - **Paris–Berlin by car**
