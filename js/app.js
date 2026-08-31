@@ -68,7 +68,7 @@ const TRANSLATIONS = {
         participantsDesc: 'How many people are attending your event?',
         participantsNote: 'This helps calculate per-person impact',
         yearRedMeat: 'One year of daily red meat',
-        yearVegetarian: 'One year of vegetarian',
+        yearVegetarian: 'One year of vegetarian diet',
         yearVegan: 'One year of vegan diet',
         parisberlinTrain: 'Paris–Berlin by train (return trip)',
         parisberlinCar: 'Paris–Berlin by car (return trip)',
