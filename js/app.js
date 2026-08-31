@@ -30,7 +30,7 @@ const TRANSLATIONS = {
         transportImpactLabel: 'Transportation',
         breakdownLabel: 'Breakdown by type',
         mealsTotalLabel: 'Meals impact:',
-        transportTotalLabel: 'Transport impact:',
+        transportTotalLabel: 'Public transportation impact:',
         contextTitle: 'A few orders of magnitude',
         contextDesc: 'Putting everyday choices in perspective — this section is about personal habits, not your event',
         targetDescIntro: 'The carbon-neutrality target is ',
@@ -876,10 +876,10 @@ function exportToExcel() {
     csv += `Total Emissions (kg CO₂e),${totalEmissions.toFixed(2)}\n`;
     csv += `Per Attendee (kg CO₂e),${perAttendee.toFixed(2)}\n`;
     csv += `Meals Impact (kg CO₂e),${mealEmissions.toFixed(2)}\n`;
-    csv += `Transport Impact (kg CO₂e),${transportEmissions.toFixed(2)}\n`;
+    csv += `Public Transportation Impact (kg CO₂e),${transportEmissions.toFixed(2)}\n`;
     if (totalEmissions > 0) {
         csv += `Emissions from Meals (%),${((mealEmissions / totalEmissions) * 100).toFixed(1)}\n`;
-        csv += `Emissions from Transport (%),${((transportEmissions / totalEmissions) * 100).toFixed(1)}\n\n`;
+        csv += `Emissions from Public Transportation (%),${((transportEmissions / totalEmissions) * 100).toFixed(1)}\n\n`;
     }
 
     csv += 'EMISSIONS FACTORS USED\n';
